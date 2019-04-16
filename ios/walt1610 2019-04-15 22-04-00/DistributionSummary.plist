@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>walt1610.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>8D86AB932CE34846E25C50D6FD22A66D477C0105</string>
+				<key>dateExpires</key>
+				<string>10/24/19</string>
+				<key>type</key>
+				<string>iOS Development</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>ZQ58D64FLA.org.jeremychiaramonte.walt1610</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>ZQ58D64FLA</string>
+				<key>get-task-allow</key>
+				<true/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>ZQ58D64FLA.org.jeremychiaramonte.walt1610</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>walt1610.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>6b79f6f3-3427-4ccd-bdc2-f1f3afe28c92</string>
+				<key>name</key>
+				<string>iOS Team Provisioning Profile: org.jeremychiaramonte.walt1610</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>ZQ58D64FLA</string>
+				<key>name</key>
+				<string>Jeremy Chiaramonte</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
