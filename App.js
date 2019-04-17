@@ -52,7 +52,8 @@ type Props = {};
 class CallInButton extends Component {
     pressCallButton() {
         //Alert.alert('Button is pressed')
-        const phoneNumber = '1231231234'
+        const phoneNumber = '1231231234' //testNumber - real number is 7048942471
+
         const args = {
           number: phoneNumber,
           prompt: true
