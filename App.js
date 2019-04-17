@@ -89,7 +89,7 @@ export default class App extends Component<Props> {
             <WebView
                 originWhitelist={['*']}
                 source={{html: webPlayer}}
-                style={{...styles.videoPlayer}}
+                style={styles.videoPlayer}
                 javaScriptEnabled ={true}
                 scrollEnabled={false}
             />
