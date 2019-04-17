@@ -7,9 +7,10 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, Alert} from 'react-native';
 import { WebView } from 'react-native-webview';
 import { whileStatement } from '@babel/types';
+import call from 'react-native-phone-call'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -47,6 +48,26 @@ const webPlayer = `
 `;
 
 type Props = {};
+
+class CallInButton extends Component {
+    pressCallButton() {
+        //Alert.alert('Button is pressed')
+        const phoneNumber = '1231231234'
+        const args = {
+          number: phoneNumber,
+          prompt: true
+        }
+        call(args).catch(console.error)
+    }
+    render() {
+        return (
+            <View style={styles.buttonView}>
+                <Button color="red" onPress={this.pressCallButton} title="Press to Call In!"/>
+            </View>
+        );
+    }
+}
+
 export default class App extends Component<Props> {
   constructor(props) {
     super(props);
@@ -61,23 +82,28 @@ export default class App extends Component<Props> {
     })
   }
 
+
   render() {
     return (
-      <View
-        style={styles.view}
-      >
-      <Text style={styles.title}>WALT 1610</Text>
-      <View style={{flex: 1, position: 'absolute', bottom: 66}}>
-        <WebView
-          originWhitelist={['*']}
-          source={{html: webPlayer}}
-          style={{...styles.iframe, opacity: this.state.loading ? 0 : 1}}
-          javaScriptEnabled ={true}
-          scrollEnabled={false}
-          onLoadStart={this.finish}
-        />
+      <View style={styles.view}>
+
+        <Text style={styles.title}> WALT 1610 </Text>
+
+        <CallInButton />
+
+        <View style={{flex: 1, position: 'absolute', bottom: 66}}>
+            <WebView
+                originWhitelist={['*']}
+                source={{html: webPlayer}}
+                style={{...styles.iframe, opacity: this.state.loading ? 0 : 1}}
+                javaScriptEnabled ={true}
+                scrollEnabled={false}
+                onLoadStart={this.finish}
+            />
+        </View>
+
       </View>
-      </View>
+
     );
   }
 }
@@ -111,4 +137,9 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  buttonView: {
+    width: '70%',
+    marginTop: 80,
+  }
+
 });
