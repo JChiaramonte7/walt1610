@@ -77,13 +77,6 @@ export default class App extends Component<Props> {
     }
   }
 
-  finish = () => {
-    this.setState({
-      loading: false
-    })
-  }
-
-
   render() {
     return (
       <View style={styles.view}>
@@ -96,10 +89,9 @@ export default class App extends Component<Props> {
             <WebView
                 originWhitelist={['*']}
                 source={{html: webPlayer}}
-                style={{...styles.iframe, opacity: this.state.loading ? 0 : 1}}
+                style={{...styles.videoPlayer}}
                 javaScriptEnabled ={true}
                 scrollEnabled={false}
-                onLoadStart={this.finish}
             />
         </View>
 
@@ -116,7 +108,7 @@ const styles = StyleSheet.create({
     height: 100,
     alignItems: 'center',
   },
-  iframe: {
+  videoPlayer: {
     marginLeft: 22, 
     //marginTop: '150%', 
     marginRight: 22, 
