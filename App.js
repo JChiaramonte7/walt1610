@@ -7,10 +7,13 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Button, Alert} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, Alert, Image} from 'react-native';
 import { WebView } from 'react-native-webview';
 import { whileStatement } from '@babel/types';
+
 import call from 'react-native-phone-call'
+
+import Radio from './Radio/Radio'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -47,16 +50,17 @@ const webPlayer = `
 </div>
 `;
 
-type Props = {};
+
 
 class CallInButton extends Component {
     pressCallButton() {
         //Alert.alert('Button is pressed')
-        const phoneNumber = '1231231234' //testNumber - real number is 7048942471
+        //const phoneNumber = '1231231234' //testNumber - real number is 7048942471
+        const phoneNumber = '7048942471'
 
         const args = {
           number: phoneNumber,
-          prompt: true
+          prompt: false
         }
         call(args).catch(console.error)
     }
@@ -68,6 +72,8 @@ class CallInButton extends Component {
         );
     }
 }
+
+
 
 export default class App extends Component<Props> {
   constructor(props) {
@@ -85,6 +91,8 @@ export default class App extends Component<Props> {
 
         <CallInButton />
 
+        <Radio/>
+        {/*
         <View style={{flex: 1, position: 'absolute', bottom: 66}}>
             <WebView
                 originWhitelist={['*']}
@@ -93,7 +101,8 @@ export default class App extends Component<Props> {
                 javaScriptEnabled ={true}
                 scrollEnabled={false}
             />
-        </View>
+        </View>*/}
+        
 
       </View>
 
@@ -133,6 +142,13 @@ const styles = StyleSheet.create({
   buttonView: {
     width: '70%',
     marginTop: 80,
-  }
+  },
+  backgroundVideo: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+  },
 
 });
